@@ -8,13 +8,13 @@ En este repositorio hay notas de guía sobre temas y conocimientos que he ido ad
 ## Indice
 
 > [Guia sobre docker](docker.md)
->> [¿Qué es y por qué usarlo?](docker.md#¿qué-es-docker-y-por-qué-debería-usarlo)  
->> [¿Cómo instalar docker?](docker.md#¿como-instalar-docker-en-distros-basadas-en-debian)  
->> [¿Cómo utilizar docker en tu proyecto?](docker.md#¿cómo-utilizar-docker-en-tu-proyecto)  
->> [Ballena de Docker](docker.md#¿quieres-que-tu-docker-imprima-una-ballena)  
+>> [¿Qué es y por qué usarlo?](docker.md#qué-es-docker-y-por-qué-debería-usarlo)  
+>> [¿Cómo instalar docker?](docker.md#como-instalar-docker-en-distros-basadas-en-debian)  
+>> [¿Cómo utilizar docker en tu proyecto?](docker.md#cómo-utilizar-docker-en-tu-proyecto)  
+>> [Ballena de Docker](docker.md#quieres-que-tu-docker-imprima-una-ballena)  
 
 > [Guia sobre git](git.md)  
->> [¿Como añadir una clave ssh a github?](git.md#¿como-añadir-una-clave-ssh-a-github)  
+>> [¿Como añadir una clave ssh a github?](git.md#como-añadir-una-clave-ssh-a-github)  
 >> [Comandos utiles](git.md#comandos-utiles-para-iniciar-un-repo-de-git)  
 
 > [Guia sobre entorno virtual de python](python_venv.md)  
