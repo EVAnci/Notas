@@ -7,10 +7,23 @@ En este repositorio hay notas de guía sobre temas y conocimientos que he ido ad
 
 ## Indice
 
-1. [Guia sobre docker](docker.md)
-2. [Guia sobre git](git.md)
-3. [Guia sobre entorno virtual de python](python_venv.md)
-4. [Guía sobre sintaxis markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+> [Guia sobre docker](docker.md)
+>> [¿Qué es y por qué usarlo?](docker.md#¿qué-es-docker-y-por-qué-debería-usarlo)  
+>> [¿Cómo instalar docker?](docker.md#¿como-instalar-docker-en-distros-basadas-en-debian)  
+>> [¿Cómo utilizar docker en tu proyecto?](docker.md#¿cómo-utilizar-docker-en-tu-proyecto)  
+>> [Ballena de Docker](docker.md#¿quieres-que-tu-docker-imprima-una-ballena)  
+
+> [Guia sobre git](git.md)  
+>> [¿Como añadir una clave ssh a github?](git.md#¿como-añadir-una-clave-ssh-a-github)  
+>> [Comandos utiles](git.md#comandos-utiles-para-iniciar-un-repo-de-git)  
+
+> [Guia sobre entorno virtual de python](python_venv.md)  
+>> [Introducción](python_venv.md#1-introducción)  
+>> [Crear entorno virtual](python_venv.md#2-crear-un-entorno-virtual)  
+>> [Activar el entorno](python_venv.md#3-activar-el-entorno-virtual)  
+>> [Manejo de paquetes con pip](python_venv.md#4-manejo-de-paquetes-con-pip)
+
+> [Guía sobre sintaxis markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 ## Datos Personales
 
