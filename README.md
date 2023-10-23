@@ -25,6 +25,8 @@ En este repositorio hay notas de guía sobre temas y conocimientos que he ido ad
 
 > [Guía sobre sintaxis markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
+> [Script de post-instalación de ArchLinuxs](arch/arch_programs.md)
+
 ## Datos Personales
 
 - Soy estudiante universitario.
