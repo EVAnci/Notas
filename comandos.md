@@ -73,3 +73,52 @@ cd $(pwd)/Descargas
 ```
 
 Esto tendrá una acción equivalente a `cd Descargas`, pero en el caso de `cd $(pwd)`, dara como entrada a `cd` la ruta absoluta.
+
+### Comando rm
+
+|comando|funcion|
+|-|-|
+|```rm <fichero>``` | Elimina el fichero indicado |
+
+#### Ejemplos
+
+El comando `rm` tiene varios parametros que le dan una gran funcionalidad, incluso, la de borrar directorios no vacios.
+
+```bash
+rm -r <directorio>
+```
+
+Borra recursivamente todo lo que hay dentro del directorio, solo si el usuario tiene los permisos necesarios para hacerlo. De igual manera existen algunos ficheros que estan protegidos para el borrado, agregando el parametro `f` (force), fuerza el borrado de estos.
+
+```bash
+rm -rf <directorio>
+```
+
+A veces queremos borrar casi, pero no todos, los archivos de un directorio. Podemos hacerlo con expresiones regulares, sin embargo, 
+
+```bash 
+rm -rfi
+```
+nos permite ir "eligiendo" que archivos quiero borrar.
+
+Si quisieramos borrar un directorio vacio, estos dos comandos son equivalentes:
+```bash
+rm -d
+rmdir
+```
+
+### Comando mv
+
+|comando|funcion|
+|-|-|
+|```mv <archivo origen> <destino>``` | Mueve el fichero/directorio indicado a la ruta indicada |
+
+#### Ejemplos
+
+Se puede utilizar para cambiar el nombre de un archivo:
+
+```bash
+mv archivo1 arhivo2
+```
+
+Dando como resultado el cambio de nombre del archivo1 a archivo2
