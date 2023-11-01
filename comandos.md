@@ -1,6 +1,6 @@
 # Comandos de Linux
 
-En linux es normal interactuar a menudo con la terminal. Sin embargo para poder interactuar de forma optima, lo mejor es tener al menos una nocion de los comandos básicos. 
+En linux es normal interactuar a menudo con la terminal. Sin embargo para poder interactuar de forma optima, lo mejor es tener al menos una nocion de los comandos básicos. En esta guía trararé de cubrir todos los aspectos, pero si quieres profundizar un poco más o leer algunas guias de inicio en Linux, esta [página](https://www.linux.org/forums/linux-beginner-tutorials.123/) tiene una buena guía para empezar.
 
 Para listar los comandos vamos a dividirlos en 3 grupos:
 1. Desplazamiento por el arbol de directorios y creacion de directorios y archivos.
