@@ -10,27 +10,6 @@ Para listar los comandos vamos a dividirlos en 3 grupos:
 
 ## Lista de Comandos General
 
-12. tar (Archivar y Comprimir):
-
-    Descripción: Crea archivos comprimidos (archivos tar) y extrae su contenido.
-
-    Parámetros:
-
-        -cvf: Crea un archivo tar.
-        -xvf: Extrae archivos de un archivo tar.
-        -z: Comprime con gzip.
-        -j: Comprime con bzip2.
-
-13. ssh (Secure Shell):
-
-    Descripción: Permite la conexión segura a través de SSH a otro sistema.
-
-    Parámetros:
-
-        usuario@host: Especifica el usuario y el host al que te quieres conectar.
-        -p: Cambia el puerto de conexión.
-        -i: Especifica una clave privada para la autenticación.
-
 14. chmod (Cambiar Permisos):
 
     Descripción: Cambia los permisos de archivos y directorios.
@@ -525,7 +504,58 @@ Estos son solo algunos ejemplos básicos. El comando `find` es muy poderoso y of
 tar -cvf archivo.tar archivo_o_directorio
 ```
 
-    - `-c`: Crea un nuevo archivo
-    - `-v`: Muestra el progreso en la consola (vervose)
-    - `-f`: Es[ecofica el nombre del archivo tar]
+- `-c`: Crea un nuevo archivo
+- `-v`: Muestra el progreso en la consola (vervose)
+- `-f`: Especifica el nombre del archivo tar
 
+2. Descomprimir un archivo tar:
+
+```bash
+tar -xvf archivo.tar
+```
+
+- `-x`: Extrae los archivos de un archivo tar
+- `-v`: Muestra el progreso en la consola (vervose)
+- `-f`: Especifica el nombre del archivo tar
+
+3. Comprimir un archivo o directorio usando gzip:
+
+```bash
+tar -czvf archivo.tar.gz archivo_o_directorio
+```
+
+- `-c`: Crea un nuevo archivo
+- `-z`: Usa gzip para comprimir
+- `-v`: Muestra el progreso en la consola (vervose)
+- `-f`: Especifica el nombre del archivo tar
+
+4. Descomprimir un archivo tar.gz:
+
+```bash
+tar -xzvf archivo.tar.gz archivo_o_directorio
+```
+
+- `-x`: Extrae los archivos de un archivo tar
+- `-z`: Usa gzip para descomprimir
+- `-v`: Muestra el progreso en la consola (vervose)
+- `-f`: Especifica el nombre del archivo tar
+
+Otro parametro que puede utilizarse es:
+
+- `-j`: Comprime con bzip2.
+
+### Comando ssh (Secure Shell)
+
+|comando|funcion|
+|-|-|
+|`ssh` | Permite la conexión segura a través de SSH a otro sistema. |
+
+#### Parametros
+
+- `usuario@host`: Especifica el usuario y el host al que te quieres conectar.
+- `-p`: Cambia el puerto de conexión.
+- `-i`: Especifica una clave privada para la autenticación.
+
+Este comando lo utilizarán para crear una clave pública y una clave privada para conectarse a github (repositorio remoto). 
+
+En la [guia sobre git](git.md) está detallado como se crean las claves, y como se configuran en github.

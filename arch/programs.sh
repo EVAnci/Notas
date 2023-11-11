@@ -35,7 +35,7 @@ else
 fi
 
 echo "Instalando programas generales y fuentes"
-paru -S atril ast-firmware visual-studio-code-bin google-chrome krita noto-fonts obs-studio slack-desktop spotify-launcher curl wget ttf-dejavu ttf-droid ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-hack ttf-inconsolata ttf-lato ttf-liberation ttf-opensans ttf-roboto ttf-ubuntu-font-family unzip unicode which wine wine-mono zsh zsh-completions btop bat eza htop xournalpp zip steam aic94xx-firmware ast-firmware linux-firmware-qlogic linux-firmware-bnx2x linux-firmware-liquidio linux-firmware-mellanox linux-firmware-nfp linux-firmware-qlogic wd719x-firmware upd72020x-fw
+paru -S atril ast-firmware visual-studio-code-bin google-chrome krita noto-fonts obs-studio slack-desktop spotify-launcher curl wget ttf-dejavu ttf-droid ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-hack ttf-inconsolata ttf-lato ttf-liberation ttf-opensans ttf-roboto ttf-ubuntu-font-family unzip unicode which wine wine-mono zsh zsh-completions btop bat eza htop xournalpp zip steam aic94xx-firmware ast-firmware linux-firmware-qlogic linux-firmware-bnx2x linux-firmware-liquidio linux-firmware-mellanox linux-firmware-nfp linux-firmware-qlogic wd719x-firmware upd72020x-fw ntfs-3g
 
 echo "Seteando zsh como shell predeterminada..."
 
