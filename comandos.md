@@ -121,7 +121,7 @@ $ ls -la
 
 ### Salida
 drwxr-xr-x 3 user group 4096 oct 24 18:36 Descargas
-.rw-r--r-- 1017 user group 6 sep 17:15 xd
+.rw-r--r-- 1 user group 1017 sep 6 17:15 xd
 ```
 En la "carpeta" Descargas, el significado de cada elemento es:
 - `d`       -> indica que es un directorio.
@@ -510,3 +510,22 @@ find /ruta/del/directorio -type f -not -path "/ruta/del/directorio/excluir/*"
 Este comando buscará solo archivos (no directorios) y excluirá cualquier cosa dentro de "/ruta/del/directorio/excluir/".
 
 Estos son solo algunos ejemplos básicos. El comando `find` es muy poderoso y ofrece muchas opciones. Puedes consultar la documentación (`man find` en la terminal) para obtener información más detallada sobre sus opciones y cómo utilizarlas.
+
+### Comando tar
+
+|comando|funcion|
+|-|-|
+|`tar` | Crea archivos comprimidos (archivos tar) y extrae su contenido. |
+
+#### Ejemplos & Parámetros
+
+1. Crear un archivo tar:
+
+```bash
+tar -cvf archivo.tar archivo_o_directorio
+```
+
+    - `-c`: Crea un nuevo archivo
+    - `-v`: Muestra el progreso en la consola (vervose)
+    - `-f`: Es[ecofica el nombre del archivo tar]
+
