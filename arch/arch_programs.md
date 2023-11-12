@@ -10,6 +10,8 @@ Aquí, en un script de bash dejaré la instalación de un AUR Helper ([paru](htt
 > [IMPORTANTE]
 > No se instalaran los driver de la placa de video, sino utilidades de configuración de la placa.
 
+En esta [página](https://codigocristo.github.io/driver_video.html) hay una buena explicación como alternativa a la Wiki de Arch. 
+
 ## Ejecución del script
 
 Para ejecutar el script (una vez descargado) vas a darle permisos de ejecución
