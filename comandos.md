@@ -10,65 +10,8 @@ Para listar los comandos vamos a dividirlos en 3 grupos:
 
 ## Lista de Comandos General
 
-14. chmod (Cambiar Permisos):
 
-    Descripción: Cambia los permisos de archivos y directorios.
 
-    Parámetros:
-
-        u/g/o/a: Representa al propietario, grupo, otros o todos.
-        +/-: Agrega o quita permisos.
-        r/w/x: Lectura, escritura o ejecución.
-
-15. top (Monitor de Procesos en Tiempo Real):
-
-    Descripción: Muestra información en tiempo real sobre los procesos en ejecución.
-
-    Parámetros: No tiene parámetros específicos, pero puedes interactuar con las opciones dentro del programa.
-
-16. df (Espacio en Disco):
-
-    Descripción: Muestra el espacio disponible en los sistemas de archivos.
-
-    Parámetros:
-
-        -h: Muestra tamaños legibles por humanos.
-        -T: Muestra el tipo de sistema de archivos.
-
-17. du (Uso del Espacio en Disco):
-
-    Descripción: Muestra el uso del espacio en disco de archivos y directorios.
-
-    Parámetros:
-        -h: Muestra tamaños legibles por humanos.
-        -s: Resumen de uso para directorios.
-
-18. ps (Listar Procesos):
-
-    Descripción: Muestra información sobre los procesos en ejecución.
-    
-    Parámetros:
-
-        aux: Muestra una lista detallada de procesos.
-        -e: Lista todos los procesos.
-
-19. history (Historial de Comandos):
-
-    Descripción: Muestra el historial de comandos utilizados en la terminal.
-
-    Parámetros:
-
-        -c: Borra el historial.
-        -d número: Borra una entrada específica del historial.
-
-20. sed (Editor Stream):
-
-    Descripción: Procesa y transforma texto.
-
-    Parámetros:
-    
-        s/buscar/reemplazar/: Sustituye una cadena con otra en el texto.
-        -i: Modifica el archivo directamente.
 
 
 ## Desplazamiento por el sistema Linux & Uso de Comandos
@@ -120,7 +63,7 @@ Por otro lado, el archivo "xd":
 
 y al final se indican, cantidad de bloques, fecha de creación/modificación y por ultimo el nombre.
 
-### Comando cd
+### Comando cd (Change Directory)
 
 |comando|funcion|
 |-|-|
@@ -166,7 +109,7 @@ Esto tendrá una acción equivalente a `cd Descargas`, pero en el caso de `cd $(
 
 El comando `pwd` (print working directory) se suele usar más que nada como entrada de programas o ficheros que requieren la ruta absoluta de un directorio especifico. Aunque esto parezca bastante abstracto a primera vista (aunque vimos un ejemplo con `cd`), es un comando con una función muy simple, imprimir el directorio actual. Su utilidad real se descubrirá en Bash Scripting.
 
-### Comando cp
+### Comando cp (Copy)
 
 |comando|funcion|
 |-|-|
@@ -192,7 +135,7 @@ cp -r directorio_1/ directorio_2/
 
 Dando como resultado una copia de `directorio_1` dentro de `directorio_2`.
 
-### Comando mv
+### Comando mv (Move)
 
 |comando|funcion|
 |-|-|
@@ -267,7 +210,7 @@ Dando como resultado:
       └── 'file 5.txt'
 ```
 
-### Comando rm
+### Comando rm (Remove)
 
 |comando|funcion|
 |-|-|
@@ -302,7 +245,7 @@ rm -d
 rmdir
 ```
 
-### Comando mkdir
+### Comando mkdir (Make directory)
 
 |comando|funcion|
 |-|-|
@@ -406,7 +349,7 @@ Algunos parámetros de grep son:
 
 Aplicando estos parámetros al ejemplo de más arriba, podriamos saber en que linea se encuentra el print que estamos buscando.
 
-### Comando man
+### Comando man (Manual)
 
 |comando|funcion|
 |-|-|
@@ -430,7 +373,7 @@ Por ejemplo, en ese caso, se nos mostrará información muy detallada sobre el c
 
 #### Parámetros y Ejemplos
 
-El comando find en sistemas basados se utiliza para buscar archivos y directorios en un sistema de archivos. Puede buscar archivos por nombre, tipo, tamaño, fecha de modificación, y otros criterios.
+El comando find se utiliza para buscar archivos y directorios en un sistema de archivos. Puede buscar archivos por nombre, tipo, tamaño, fecha de modificación, y otros criterios.
 
 Algunas opciones comúnes son:
 
@@ -559,3 +502,131 @@ Otro parametro que puede utilizarse es:
 Este comando lo utilizarán para crear una clave pública y una clave privada para conectarse a github (repositorio remoto). 
 
 En la [guia sobre git](git.md) está detallado como se crean las claves, y como se configuran en github.
+
+### Comando chmod (Cambiar Permisos)
+
+|comando|funcion|
+|-|-|
+|`chmod <000> <file or directory>` | Cambia los permisos de archivos y directorios. |
+
+#### Ejemplos y parametros
+
+Este comando se utiliza únicamente para cambiar los permisos de un fichero o directorio.
+
+¿Pero qué significa permisos? ¿Y como puedo saber los permisos actuales que tengo?
+
+Bueno, si bien recuerdan, el comando `ls -l` nos mostraba en forma de lista todo el contenido de un directorio, pero además, también nos mostraba, en la primera columna, los permisos que teniamos en cada uno de los archivos o directorios.
+
+Esto de los permisos en linux existe porque es un sistema operativo multiusuario, y seguro habrán componentes que no queremos que sean modificadas por cualquier otro usuario, incluso, podemos gestionar tres tipos de permosos:
+
+- Lectura
+- Escritura
+- Ejecución
+
+Esto además permite proteger el sistema de acciones peligrosas de parte del usuario. El usuario root, existente en forma base en cualquier instalación de linux, es el usuario "administrador". Con este usuario se tienen privilegios máximos en el sistema operativo, y se puede realizar cualquier modificación. 
+
+Ejemplos de uso de chmod:
+
+Supongamos el siguiente archivo:
+
+```bash
+.rw-r--r-- 1 pepe pepe 1017 sep 6 17:15 programa
+```
+
+Pues tal y como vimos en el apartado del comando ls, aquí solo tenemos permisos de lectura y escritura si somos el usuario "pepe". 
+
+¿Pero que pasaría si este "programa" es un ejecutable?
+
+Bueno, en realidad nada. No pasaría nada porque no podríamos ejecutarlo. Solo podriamos leerlo y editarlo. Entonces aquí podemos cambiar los permisos para que podamos ejecutarlo.
+
+```bash
+chmod 744 programa
+```
+
+Esto da como resultado:
+
+```bash
+.rwxr--r-- 1 pepe pepe 1017 sep 6 17:15 programa
+```
+
+¿Pero por qué "744", de dónde sale ese número?
+
+Bueno en realidad existen varias formas de cambiar los permisos de un archivo. Si ya han visto el sistema binario de numeración entonces se entenderá rápido.
+
+Como bien se ve en la salida de ls, cada "permiso" tiene una posición, y a su vez, los permisos estan agrupados de la forma usuario-grupo-otros. Entonces, si a cada permiso le hacemos corresponder un "encendido/apagado", su estado es binario. Es decir:
+
+```bash
+# Salida de ls
+.  rwx  r--  r--   1 pepe pepe 1017 sep 6 17:15 programa
+# Número binario asociado a cada permiso en usuario-grupo-otros
+   111  100  100
+# Número octal/decimal asociado al número binario
+    7    4    4
+```
+
+Y de ahí aparece el 744. Igualmente podría formarce cualquier otra combinación de permisos. Sin embargo, a pesar de que es mi forma preferida de cambiar los permisos existen otras maneras de hacerlo que para algunas personas es más sencillo.
+
+Veamos la sintaxis para hacerlo con el segundo metodo:
+
+- u/g/o/a: Representa al propietario, grupo, otros o todos.
+- +/-: Agrega o quita permisos.
+- r/w/x: Lectura, escritura o ejecución.
+
+Entonces para lograr lo mismo que obtuvimos en el ejemplo de arriba tendríamos que hacer:
+
+```bash
+chmod u+x programa
+```
+
+### Comando top (Monitor de Procesos en Tiempo Real)
+
+#### Preinstalado
+
+|comando|funcion|
+|-|-|
+|`top` | Muestra información en tiempo real sobre los procesos en ejecución. |
+
+#### Alternativas Instalables
+
+|comando|funcion|
+|-|-|
+|`htop` | Es como top, pero con una mejora visual. |
+|`btop` | Hace lo mismo que top, pero con una significativa mejora visual. |
+
+Su uso es unicamente mostrar los procesos y ver el consumo de recursos. No tiene parametros.
+
+### Comando sed (Stream editor)
+
+|comando|funcion|
+|-|-|
+|`sed` | Procesa y transforma texto. |
+
+#### Breve descripción & Parametros
+
+Este comando es muy potente. Sus usos son totalmente variados, ya que tiene muchas funcionalidades distintas, es decir, se podría hacer un apartado completo solo para este comando. Si bien haré más adelante un apartado para el comando `sed` y `awk` por separado, mostraré un ejemplo en el que efectuaremos una sustitución en un fichero.txt. 
+
+```bash
+sed s/^[Aa]/@/g
+```
+    
+- s/buscar/reemplazar/: Sustituye una cadena con otra en el texto.
+- -i: Modifica el archivo directamente.
+
+### Comandos df y du
+
+|comando|funcion|
+|-|-|
+|`df` | Muestra el espacio disponible en los sistemas de archivos. |
+
+#### Parametros
+- -h: Muestra tamaños legibles por humanos.
+- -T: Muestra el tipo de sistema de archivos.
+
+|comando|funcion|
+|-|-|
+|`du` | Muestra el uso del espacio en disco de archivos y directorios. |
+
+#### Parametros
+
+- -h: Muestra tamaños legibles por humanos.
+- -s: Resumen de uso para directorios.
