@@ -12,7 +12,7 @@ cd ~/.ssh
 Luego vamos a generar una clave ssh
 
 ```bash
-ssh-keygen
+ssh-keygen -t ed25519 -C 'mail@exaple'
 ```
 
 Este comando nos preguntará el nombre del archivo en el cual queremos guardar nuestra clave ssh, podemos dejarlo por defecto si no ponemos nada. Luego nos pedira la contraseña. Ahí vamos a poner una contraseña para clave ssh. Esta contraseña no tiene nada que ver con nuestra contraseña de linux, podemos poner la clave que queramos.
