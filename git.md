@@ -5,7 +5,8 @@
 Primero en una terminal, en nuestro directorio home vamos a crear una carpeta llamada .ssh
 
 ```bash
-mkdir .ssh
+mkdir ~/.ssh
+cd ~/.ssh
 ```
 
 Luego vamos a generar una clave ssh
@@ -22,13 +23,13 @@ Luego de colocar el nombre de archivo y la contraseña aparecera un dibujo, y se
 
 ```bash
 $ ls
-id_rsa  id_rsa.pub
+id_ed25519  id_ed25519.pub
 ```
 
 El que no termina en nada es nuestro archivo privado, el cual no se comparte. El que termina en .pub es nuestra clave publica. El contenido del archivo .pub lo vamos a copiar para pegarlo en github. Esto lo podemos hacer de la siguiente manera:
 
 ```bash
-cat .ssh/id_rsa.pub
+cat .ssh/id_ed25519.pub
 ```
 
 ## Añadir la clave publica a GitHub
@@ -36,13 +37,7 @@ cat .ssh/id_rsa.pub
 La clave que copiamos tendra un aspecto similar a este:
 
 ```bash
-ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAybmcqaU/Xos/GhYCzkV+kDsK8+A5OjaK
-5WgLMqmu38aPo56Od10RQ3EiB42DjRVY8trXS1NH4jbURQPERr2LHCCYq6tHJYfJNhUX
-/COwHs+ozNPE83CYDhK4AhabahnltFE5ZbefwXW4FoKOO+n8AdDfSXOazpPas8jXi5bE
-wNf7heZT++a/Qxbu9JHF1huThuDuxOtIWl07G+tKqzggFVknM5CoJCFxaik91lNGgu2O
-TKfY94c/ieETOXE5L+fVrbtOh7DTFMjIYAWNxy4tlMR/59UVw5dapAxH9J2lZglkj0w0
-LwFI+7hZu9XvNfMKMKg+ERAz9XHYH3608RL1RQ== Este comentario describe la
-clave
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINDK/hxaQDY0NojrsYtdRmKbCFORP0/jNioG2uS2QNvs user@host
 ```
 
 La salida de este comando la podemos copiar con ctrl+shift+v. Con esto vamos a ir a nuestra cuenta de github y nos dirigimos a Opciones/SSH and GPG Keys. Ahí podremos crear una nueva clave ssh dandole al boton verde que dice "Nueva clave SSH", y ahi pegamos todo el contenido de nuestra clave. 
@@ -58,7 +53,7 @@ eval $(ssh-agent -s)
 Luego agregamos la clave privada, nos pedirá la contraseña de ssh.
 
 ```bash
-ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_ed.25519
 ```
 
 # Comandos utiles para iniciar un repo de git
