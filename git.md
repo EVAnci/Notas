@@ -40,7 +40,7 @@ La clave que copiamos tendra un aspecto similar a este:
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINDK/hxaQDY0NojrsYtdRmKbCFORP0/jNioG2uS2QNvs user@host
 ```
 
-La salida de este comando la podemos copiar con ctrl+shift+v. Con esto vamos a ir a nuestra cuenta de github y nos dirigimos a Opciones/SSH and GPG Keys. Ahí podremos crear una nueva clave ssh dandole al boton verde que dice "Nueva clave SSH", y ahi pegamos todo el contenido de nuestra clave. 
+La salida de este comando la podemos copiar seleccionandola y copiandola con ctrl+shift+c. Con esto vamos a ir a nuestra cuenta de github y nos dirigimos a Opciones/SSH and GPG Keys. Ahí podremos crear una nueva clave ssh dandole al boton verde que dice "Nueva clave SSH", y ahi pegamos todo el contenido de nuestra clave. 
 
 ## Adicional
 
