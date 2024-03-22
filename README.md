@@ -7,8 +7,9 @@ En este repositorio hay notas de guía sobre temas y conocimientos que he ido ad
 
 ## Indice
 
-- [Comandos de linux](comandos.md)
-  - [Lista de comandos](comandos.md#lista-de-comandos-general)
+- [Guia de Linux](linux/linux-basic.md)
+  - [Introduccion a linux](linux/linux-basic.md)
+  - [Lista de comandos de linux](linux/comandos.md)
 
 - [Guia sobre docker](docker.md)
   - [¿Qué es y por qué usarlo?](docker.md#qué-es-docker-y-por-qué-debería-usarlo)  
