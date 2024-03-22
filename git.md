@@ -29,7 +29,7 @@ id_ed25519  id_ed25519.pub
 El que no termina en nada es nuestro archivo privado, el cual no se comparte. El que termina en .pub es nuestra clave publica. El contenido del archivo .pub lo vamos a copiar para pegarlo en github. Esto lo podemos hacer de la siguiente manera:
 
 ```bash
-cat .ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub
 ```
 
 ## Añadir la clave publica a GitHub
