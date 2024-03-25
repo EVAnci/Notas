@@ -153,9 +153,13 @@ Y repites el procedimiento, pero en vscode (no hace falta tocar `ctrl+o` ni ning
 
 Aquellos que tienen configurado un Dual Boot entre Windows y Linux, es bastante tedioso tener que estar pendiente del encendido para que la PC, luego de unos pocos segundos, no bootee por defecto en Linux.
 
-Esto, curiosamente es bastante sencillo de solucionar, pero debemos ir con cuidado. 
+Esto, curiosamente es bastante sencillo de solucionar, pero debemos ir con cuidado ya que un error en la configuración puede ser complicado de arreglar para alguien que recien empieza. 
 
-Para no complicar mucho las cosas he realizado un script que cambiará esto por nosotros, y tambien dejará un backup en caso de que algo salga mal. De igual manera, voy a enseñar la manera de hacerlo manualmente para que no queden dudas. 
+### Configuración Automática
+
+Para no complicar mucho las cosas he realizado un script que cambiará esto por nosotros, y tambien dejará un backup en caso de que algo salga mal. De igual manera, voy a enseñar la manera de hacerlo manualmente para que no queden dudas.
+
+Quiero añadir que este script lo he testeado en 2 computadoras unicamente, así que no descarto que puedan existir posibles errores. En caso de existir errores, puedes generar un issue para que pueda corregirlo. Si el error aparece en tu terminal, directamente pega el error en el issue de github, y si no aparece ningún error en la terminal, pero el codigo de estado de salida es 1, entonces puedes intentar la forma manual.
 
 Para ejecutar el script hay dos maneras de hacerlo:
 
@@ -176,6 +180,8 @@ sudo !$
 En ambos casos estamos corriendo el script para cambiar el tiempo de espera en el GRUB, solo que en el primer caso, estamos usando la salida del comando curl para darlo como entrada a bash, de este modo se ejecutará el script, pero esto no puedo asegurar que funcione en todas las distros, ya que solo lo he probado en Debian. En cambio, en el caso 2, el script se descarga, se configuran manualmente los permisos de ejecucion para todos los usuarios, y por ultimo se lo ejecuta con permisos de super usuario, ya que debemos modificar cosas internas del sistema.
 
 Una vez se ejecuta el script, nos genera un archivo de reespaldo, y luego nos pregunta por el tiempo que queremos que el GRUB esté esperando para que se lance una entrada de sistema operativo. Al momento de ingresar el tiempo, este debe estar en SEGUNDOS.
+
+### Configuración Manual
 
 Si tienes ganas de aprender y arriesgarte un poco, entonces vamos a ver como configurar el timeout de GRUB de forma manual.
 
@@ -210,7 +216,7 @@ Para editarla usaremos un editor de texto por terminal llamando nano, ya que no 
 nano /etc/default/grub
 ```
 
-Luego, dentro del editor, vamos a cambiar el tiempo por el que nosotros queramos, (recomiendo que sea entre 5 y 120 segundos), y una vez terminemos, vamos a tocar `ctrl+o` luego `enter` y por ultimo `ctrl+x`. Con esto ya nos queda el archivo modificado. Para confirmar los cambios podemos hacer un cat al archivo y verificar que la line de timeout este en el valor que elegimos:
+Luego, dentro del editor, vamos a cambiar el tiempo por el que nosotros consideremos, (recomiendo que sea entre 5 y 120 segundos), y una vez terminemos, vamos a tocar `ctrl+o` luego `enter` y por ultimo `ctrl+x`. Con esto ya nos queda el archivo modificado. Para confirmar los cambios podemos hacer un cat al archivo y verificar que la linea de timeout este en el valor que elegimos:
 
 ```bash
 cat /etc/default/grub
