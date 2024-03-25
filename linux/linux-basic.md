@@ -166,7 +166,7 @@ Para ejecutar el script hay dos maneras de hacerlo:
 1) Sin descargar el archivo (testeo):
 
 ```bash
-sudo apt install curl -y && sudo curl -sSL https://raw.githubusercontent.com/EVAnci/Notas/main/linux/grub-time-changer.sh | bash
+sudo apt install curl -y && sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/EVAnci/Notas/main/linux/grub-time-changer.sh)"
 ```
 
 2) Descargando el archivo (recomendado):
