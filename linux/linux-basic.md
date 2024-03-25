@@ -163,13 +163,13 @@ Quiero añadir que este script lo he testeado en 2 computadoras unicamente, así
 
 Para ejecutar el script hay dos maneras de hacerlo:
 
-1) Sin descargar el archivo (testeo):
+1) Sin descargar el archivo (recomendado):
 
 ```bash
 sudo apt install curl -y && sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/EVAnci/Notas/main/linux/grub-time-changer.sh)"
 ```
 
-2) Descargando el archivo (recomendado):
+2) Descargando el archivo:
 
 ```bash
 sudo apt install wget -y && wget https://raw.githubusercontent.com/EVAnci/Notas/main/linux/grub-time-changer.sh
@@ -177,7 +177,7 @@ chmod 775 grub-time-changer.sh
 sudo !$
 ```
 
-En ambos casos estamos corriendo el script para cambiar el tiempo de espera en el GRUB, solo que en el primer caso, estamos usando la salida del comando curl para darlo como entrada a bash, de este modo se ejecutará el script, pero esto no puedo asegurar que funcione en todas las distros, ya que solo lo he probado en Debian. En cambio, en el caso 2, el script se descarga, se configuran manualmente los permisos de ejecucion para todos los usuarios, y por ultimo se lo ejecuta con permisos de super usuario, ya que debemos modificar cosas internas del sistema.
+En ambos casos estamos corriendo el script para cambiar el tiempo de espera en el GRUB, solo que en el primer caso, estamos usando la salida del comando curl para darlo como entrada a bash, de este modo se ejecutará el script. En cambio, en el caso 2, el script se descarga, se configuran manualmente los permisos de ejecucion para todos los usuarios, y por ultimo se lo ejecuta con permisos de super usuario, ya que debemos modificar cosas internas del sistema.
 
 Una vez se ejecuta el script, nos genera un archivo de reespaldo, y luego nos pregunta por el tiempo que queremos que el GRUB esté esperando para que se lance una entrada de sistema operativo. Al momento de ingresar el tiempo, este debe estar en SEGUNDOS.
 
