@@ -12,7 +12,7 @@ Una shell es un programa informático que actúa como una interfaz entre el usua
 
 De primeras vamos a ver la terminal con un aspecto parecido a este:
 
-[![Terminal de Bash](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freecodecamp.org%2Fnews%2Fbash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners%2F&psig=AOvVaw26BHyDdWNqxMCeiiUYmhNu&ust=1711160027626000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLCkxYvmhoUDFQAAAAAdAAAAABAJ)](https://es.wikipedia.org/wiki/Bash)
+![Bash](../media/terminal.png)
 
 Algunos ejemplos de shells populares incluyen:
 
@@ -115,7 +115,15 @@ Con esto, nuestro nuevo prompt no solo debería tener colores, sino que debería
 
 Este aspecto es porque, por defecto, el tema aplicado es robbyrussell. Si no te gusta este tema, puedes buscar el nombre del tema que te guste [aquí](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
 
-Una vez tienes el nombre del tema que te gusta, puedes aplicar el siguiente comando:
+Una vez tienes el nombre del tema que te gusta, puedes elegir dos maneras de editar el archivo, la primera automática:
+
+```bash
+read theme_name; sed -i "s/^ZSH_THEME=\"[^\"]*\"/ZSH_THEME=\"$theme_name\"/" ~/.zshrc
+```
+
+Para ejecutar este comando, vamos a copiarlo y pegarlo en la terminal y apretar enter. Luego, vamos a escribir textual el nombre del tema que nos ha gustado (hay que tener cuidado que no se inserten espacios adicionales al inicio o al final, ya que si esto sucede, el comando no funcionará) y una vez hemos terminado, podemos apretar enter y el tema se habrá reemplazado. Para poder notar los cambios debemos reiniciar la terminal.
+
+Y en la segunda opción, manualmente editaremos el archivo .zshrc:
 
 ```bash
 nano ~/.zshrc
@@ -143,4 +151,79 @@ Y repites el procedimiento, pero en vscode (no hace falta tocar `ctrl+o` ni ning
 
 ## Configuracion del GRUB
 
-Pendiente...
+Aquellos que tienen configurado un Dual Boot entre Windows y Linux, es bastante tedioso tener que estar pendiente del encendido para que la PC, luego de unos pocos segundos, no bootee por defecto en Linux.
+
+Esto, curiosamente es bastante sencillo de solucionar, pero debemos ir con cuidado. 
+
+Para no complicar mucho las cosas he realizado un script que cambiará esto por nosotros, y tambien dejará un backup en caso de que algo salga mal. De igual manera, voy a enseñar la manera de hacerlo manualmente para que no queden dudas. 
+
+Para ejecutar el script hay dos maneras de hacerlo:
+
+1) Sin descargar el archivo (testeo):
+
+```bash
+sudo apt install curl -y && sudo curl -sSL https://raw.githubusercontent.com/EVAnci/Notas/main/linux/grub-time-changer.sh | bash
+```
+
+2) Descargando el archivo (recomendado):
+
+```bash
+sudo apt install wget -y && wget https://raw.githubusercontent.com/EVAnci/Notas/main/linux/grub-time-changer.sh
+chmod 775 grub-time-changer.sh
+sudo !$
+```
+
+En ambos casos estamos corriendo el script para cambiar el tiempo de espera en el GRUB, solo que en el primer caso, estamos usando la salida del comando curl para darlo como entrada a bash, de este modo se ejecutará el script, pero esto no puedo asegurar que funcione en todas las distros, ya que solo lo he probado en Debian. En cambio, en el caso 2, el script se descarga, se configuran manualmente los permisos de ejecucion para todos los usuarios, y por ultimo se lo ejecuta con permisos de super usuario, ya que debemos modificar cosas internas del sistema.
+
+Una vez se ejecuta el script, nos genera un archivo de reespaldo, y luego nos pregunta por el tiempo que queremos que el GRUB esté esperando para que se lance una entrada de sistema operativo. Al momento de ingresar el tiempo, este debe estar en SEGUNDOS.
+
+Si tienes ganas de aprender y arriesgarte un poco, entonces vamos a ver como configurar el timeout de GRUB de forma manual.
+
+Primero que nada vamos a escalar nuestros privilegios para ser usuarios root:
+
+```bash
+sudo su
+```
+
+Este comando nos pedirá la contraseña, y luego nos cambiará el prompt por uno al estilo de bash plano. 
+
+Para comenzar, vamos a crear un archivo de reespaldo del archivo de configuración de GRUB por si tenemos algún problema. 
+
+```bash
+cp /etc/default/grub /etc/default/grub.bkp
+```
+
+Luego vamos a editar el archivo grub original, donde editaremos una linea que dice "GRUB_TIMEOUT":
+
+```bash
+# GRUB boot loader configuration
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=5  <----------- Esta linea 
+GRUB_DISTRIBUTOR="Arch"
+
+```
+
+Para editarla usaremos un editor de texto por terminal llamando nano, ya que no es recomendable correr programas como VSCode en modo superusuario.
+
+```bash
+nano /etc/default/grub
+```
+
+Luego, dentro del editor, vamos a cambiar el tiempo por el que nosotros queramos, (recomiendo que sea entre 5 y 120 segundos), y una vez terminemos, vamos a tocar `ctrl+o` luego `enter` y por ultimo `ctrl+x`. Con esto ya nos queda el archivo modificado. Para confirmar los cambios podemos hacer un cat al archivo y verificar que la line de timeout este en el valor que elegimos:
+
+```bash
+cat /etc/default/grub
+```
+
+Si todo está correcto, entonces podemos generar el archivo de configuración de grub en la partición de booteo:
+
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Con este comando lo que estamos haciendo es decirle a GRUB que tome el archivo que modificamos `/etc/default/grub` y a partir de este genere un archivo de configuración legible y lo guarde en la partición /boot que tenemos creada.
+
+¿A que me refiero con partición boot? 
+
+Bueno esto es un poco complejo para darlo en una introducción pero, en terminos sencillos, el directorio /boot, en general, en la mayoría de distribuciones Linux, es un directorio especial que tiene montada la partición EFI, o en el caso de BIOS, la partición booteable, y es en donde el cargador de arranque GRUB se aloja.
