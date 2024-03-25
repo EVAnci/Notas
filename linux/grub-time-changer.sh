@@ -7,16 +7,16 @@ yes_no_validate() {
         read -p "$message" input
         input=$(echo "$input" | tr '[:upper:]' '[:lower:]') 
         if [[ -z "$input" ]]; then
-            input="$default"  # Si no se proporciona ninguna entrada, la opción predeterminada es "no"
+            input="$default"
             break
         elif [[ "$input" == "s" || "$input" == "si" ]]; then
-            input="s"  # Entrada válida "si"
+            input="s" 
             break
         elif [[ "$input" == "n" || "$input" == "no" ]]; then
-            restorde="n"  # Entrada válida "no"
+            restorde="n"
             break
         else
-            echo "La entrada proporcionada es invalida!"  # Entrada inválida
+            echo "La entrada proporcionada es invalida!"
         fi
     done
     echo $input
@@ -51,11 +51,9 @@ while [[ $grub_timeout -lt "5" || $grub_timeout -gt "120" ]]; do
     read -p "Cantidad de segundos para el cargador de arranque [5-120]: " grub_timeout
 done
 
-# cp /etc/default/grub /etc/default/grub.bkp
-
 cp /etc/default/grub /etc/default/grub.bkp
 
-sed -i "s/^GRUB_TIMEOUT=[^\"]*/GRUB_TIMEOUT=$grub_timeout/" grub
+sed -i "s/^GRUB_TIMEOUT=[^\"]*/GRUB_TIMEOUT=$grub_timeout/" /etc/default/grub
 
 echo "[+] Generando archivo de configuración del GRUB"
 
