@@ -5,12 +5,12 @@ yes_no_validate() {
     default="$2"
     while true; do
         read -p "$message" input
-        input=$(echo "$input" | tr '[:upper:]' '[:lower:]') 
+        input=$(echo "$input" | tr '[:upper:]' '[:lower:]')
         if [[ -z "$input" ]]; then
             input="$default"
             break
         elif [[ "$input" == "s" || "$input" == "si" ]]; then
-            input="s" 
+            input="s"
             break
         elif [[ "$input" == "n" || "$input" == "no" ]]; then
             restorde="n"
@@ -27,7 +27,7 @@ if [[ $(find /etc/default -name grub.bkp -type f | grep .) ]]; then
     if [[ $(find /etc/default -name grub.bkp -type f | grep .) && $restore == "s" ]]; then
         echo "[+] Restaurando archivo..."
         cp /etc/default/grub.bkp /etc/default/grub
-        continue=s
+        continue=$(yes_no_validate "Desea continuar editando el archivo grub? [s/N)" "n")
     elif [[ "$restore" == "s" ]] && ! [[ $(find /etc/default -name grub.bkp -type f | grep .) ]]; then
         echo "[!] El achivo de reespaldo no ha sido encontrado"
         continue=$(yes_no_validate "Desea continuar? [S/n]: " "s")

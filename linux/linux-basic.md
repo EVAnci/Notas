@@ -2,6 +2,8 @@
 
 Al instalar Linux en tu PC por primera vez y ver que todo funciona correctamente, es tentador pensar que lo más difícil ya ha pasado. Sin embargo, con el tiempo, te das cuenta de la abrumadora cantidad de posibilidades que ofrece este sistema operativo. Pero no te preocupes, vamos paso a paso.
 
+Si por algún motivo, aún no tienes Linux instalado, en [este video](https://youtu.be/r-gknSVmHgo)
+
 ## "¡La terminal es lo importante!" exclaman los usuarios de Linux
 
 Cuando un usuario de Linux te habla sobre la terminal y las ventajas de usarla, realmente está hablando de Bash. 
@@ -33,11 +35,50 @@ La shell Bash (Bourne Again Shell) es una de las opciones más populares y poder
 6. Historial de comandos: Bash mantiene un historial de comandos ejecutados, lo que facilita la recuperación y repetición de comandos anteriores.
 7. Expansión de comandos: Ofrece diversas funcionalidades de expansión de comandos, como expansión de variables, expansión de comodines y expansión aritmética, que aumentan la productividad del usuario.
 
-Bueno, como podemos ver, toda esta lista suena maravillosa, pero... ¿Por donde empiezo? 
+Bueno, como podemos ver, toda esta lista suena maravillosa, pero... ¿Por donde empiezo?
 
 ## Bash
 
 En este apartado vamos a ver algunas curiosidades y funciones utiles que podemos utilizar en una Bash.
+
+En bash tenemos algunos comandos esenciales para movernos por las "carpetas" (las carpetas realmente son directorios, pero carpeta es un nombre popular) y ver los archivos y carpetas que hay dentro de un directorio.
+
+### Comandos básicos
+
+Para ver el contenido de un directorio, el comando a emplear es `ls`. Este comando nos sirve para ver que hay dentro del directorio actual.
+
+Por ejemplo, si abrimos una terminal y ejecutamos `ls` deberíamos ver algo similar a esto:
+
+```bash
+➜  ~ ls
+Descargas  Documentos  Escritorio  Imágenes  Videos
+```
+
+Una opción interesante del comando `ls` es `-a`, que nos permite ver los archivos y carpetas ocultas.
+
+En linux, los archivos y carpetas que empiezan por "." (punto), son los que se ocultan. Entonces, `ls -a` nos mostrará todos los archivos y carpetas del directorio actual. 
+
+Si queremos saber más sobre `ls` podemos ver [esta guia de comandos](./comandos.md/#comando-ls).
+
+Otro comando interesante es el comando `cd` (change directory), que sirve para cambiar mi directorio actual, es decir, básicamente sirve para entrar y salir de las carpetas en nuestro sistema, como si estuvieramos navegando por el explorador de archivos.
+
+Por ejemplo, si quisieramos ir a la carpeta "Descargas", podemos hacer:
+
+```bash
+cd Descargas
+```
+
+Entonces, si hacemos un `ls`, vamos a ver que archivos/carpetas tenemos en la carpeta Descargas.
+
+¿Y cómo hacemos para volver a nuestro directorio home? ¿Cómo retrocedemos directorios?
+
+Bueno esto es bastante fácil. Con `..` despues de `cd`, nos movemos al directorio padre (carpeta anterior). Entonces:
+
+```bash
+cd ..
+```
+
+Nos sirve para volver a la carpeta de atras. Para ver más utilidades y ejemplos del comando `cd` podemos ver [esta guía](./comandos.md/#comando-cd-change-directory)
 
 ### Autocompletado con Tab
 
@@ -163,13 +204,13 @@ Quiero añadir que este script lo he testeado en 2 computadoras unicamente, así
 
 Para ejecutar el script hay dos maneras de hacerlo:
 
-1) Sin descargar el archivo (testeo):
+1) Sin descargar el archivo (recomendado):
 
 ```bash
 sudo apt install curl -y && sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/EVAnci/Notas/main/linux/grub-time-changer.sh)"
 ```
 
-2) Descargando el archivo (recomendado):
+2) Descargando el archivo:
 
 ```bash
 sudo apt install wget -y && wget https://raw.githubusercontent.com/EVAnci/Notas/main/linux/grub-time-changer.sh
@@ -177,7 +218,7 @@ chmod 775 grub-time-changer.sh
 sudo !$
 ```
 
-En ambos casos estamos corriendo el script para cambiar el tiempo de espera en el GRUB, solo que en el primer caso, estamos usando la salida del comando curl para darlo como entrada a bash, de este modo se ejecutará el script, pero esto no puedo asegurar que funcione en todas las distros, ya que solo lo he probado en Debian. En cambio, en el caso 2, el script se descarga, se configuran manualmente los permisos de ejecucion para todos los usuarios, y por ultimo se lo ejecuta con permisos de super usuario, ya que debemos modificar cosas internas del sistema.
+En ambos casos estamos corriendo el script para cambiar el tiempo de espera en el GRUB, solo que en el primer caso, estamos usando la salida del comando curl para darlo como entrada a bash, de este modo se ejecutará el script. En cambio, en el caso 2, el script se descarga, se configuran manualmente los permisos de ejecucion para todos los usuarios, y por ultimo se lo ejecuta con permisos de super usuario, ya que debemos modificar cosas internas del sistema.
 
 Una vez se ejecuta el script, nos genera un archivo de reespaldo, y luego nos pregunta por el tiempo que queremos que el GRUB esté esperando para que se lance una entrada de sistema operativo. Al momento de ingresar el tiempo, este debe estar en SEGUNDOS.
 
