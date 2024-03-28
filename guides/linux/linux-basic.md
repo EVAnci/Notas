@@ -14,7 +14,7 @@ Una shell es un programa informático que actúa como una interfaz entre el usua
 
 De primeras vamos a ver la terminal con un aspecto parecido a este:
 
-![Bash](../media/terminal.png)
+![Bash](../../media/terminal.png)
 
 Algunos ejemplos de shells populares incluyen:
 
