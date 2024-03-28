@@ -40,11 +40,11 @@ La clave que copiamos tendra un aspecto similar a este:
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINDK/hxaQDY0NojrsYtdRmKbCFORP0/jNioG2uS2QNvs user@host
 ```
 
-La salida de este comando la podemos copiar seleccionandola y copiandola con ctrl+shift+c. Con esto vamos a ir a nuestra cuenta de github y nos dirigimos a Opciones/SSH and GPG Keys. Ahí podremos crear una nueva clave ssh dandole al boton verde que dice "Nueva clave SSH", y ahi pegamos todo el contenido de nuestra clave. 
+La salida de este comando la podemos copiar seleccionandola y copiandola con ctrl+shift+c. Con esto vamos a ir a nuestra cuenta de github y nos dirigimos a Opciones/SSH and GPG Keys. Ahí podremos crear una nueva clave ssh dandole al botón verde que dice "Nueva clave SSH", y ahi pegamos todo el contenido de nuestra clave. 
 
 ## Adicional
 
-En el caso de que no quieras poner la contraseña cada ves que pusheas algo a github se puede agregar la clave ssh al agente de ssh
+En el caso de que no quieras poner la contraseña cada ves que pusheas algo a github se puede agregar la clave ssh al agente de ssh:
 
 ```bash
 eval $(ssh-agent -s)
@@ -53,7 +53,7 @@ eval $(ssh-agent -s)
 Luego agregamos la clave privada, nos pedirá la contraseña de ssh.
 
 ```bash
-ssh-add ~/.ssh/id_ed.25519
+ssh-add ~/.ssh/id_ed25519
 ```
 
 # Comandos utiles para iniciar un repo de git
