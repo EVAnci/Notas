@@ -17,9 +17,9 @@ En este repositorio hay notas de guía sobre temas y conocimientos que he ido ad
   - [¿Cómo utilizar docker en tu proyecto?](guides/docker.md#cómo-utilizar-docker-en-tu-proyecto)  
   - [Ballena de Docker](guides/docker.md#quieres-que-tu-docker-imprima-una-ballena)  
 
-- [Guia sobre git](guides/git.md)  
-  - [¿Como añadir una clave ssh a github?](guides/git.md/ssh.md)  
-  - [Comandos utiles](git/guides/git.md)  
+- [Guia sobre git](guides/start.md)  
+  - [¿Como añadir una clave ssh a github?](guides/git/ssh.md)  
+  - [Comandos utiles](guides/git/git.md)  
 
 - [Guia sobre utilidades de python](guides/python.md)
   - [Python Debugger](guides/python.md#python-debugger)
