@@ -10,9 +10,56 @@ Para listar los comandos vamos a dividirlos en 3 grupos:
 
 ## Lista de Comandos General
 
+En esta lista de comandos general puedes dar un vistazo sobre algunos de los comandos más usados, teniendo en cuenta los gestores de paquetes de distribuciones basadas en Debian:
 
+0. **Manual de comandos**
+   - `man`: Mostrar un manual sobre un comando especificado.
 
+1. **Administración del sistema:**
+   - `sudo`: Ejecutar comandos con privilegios de superusuario (super user do).
+   - `su`: Cambiar al usuario superusuario (root).
+   - `apt-get`: Herramienta de gestión de paquetes para instalar, actualizar y eliminar software.
+   - `dpkg`: Gestor de paquetes de más bajo nivel para Debian.
+   - `systemctl`: Controlar los servicios del sistema.
+   - `journalctl`: Visualizar registros del sistema.
 
+2. **Gestión de archivos y directorios:**
+   - `ls`: Listar archivos y directorios.
+   - `cd`: Cambiar de directorio.
+   - `mkdir`: Crear directorios.
+   - `rm`: Eliminar archivos o directorios.
+   - `cp`: Copiar archivos y directorios.
+   - `mv`: Mover o renombrar archivos y directorios.
+   - `nano`/`vim`/`emacs`: Editores de texto en la línea de comandos.
+
+3. **Gestión de usuarios y grupos:**
+   - `useradd`: Agregar un nuevo usuario.
+   - `userdel`: Eliminar un usuario.
+   - `usermod`: Modificar los atributos de un usuario.
+   - `groupadd`: Agregar un nuevo grupo.
+   - `groupdel`: Eliminar un grupo.
+   - `passwd`: Cambiar la contraseña de un usuario.
+
+4. **Redes:**
+   - `ifconfig`/`ip`: Mostrar y configurar la información de red.
+   - `ping`: Verificar la conectividad con un host remoto.
+   - `ssh`: Conectar a un servidor remoto de forma segura.
+   - `scp`: Copiar archivos de forma segura a través de SSH.
+   - `netstat`/`ss`: Mostrar información sobre conexiones de red y puertos.
+
+5. **Compresión y descompresión:**
+   - `tar`: Crear, ver y extraer archivos tar.
+   - `gzip`/`gunzip`: Comprimir y descomprimir archivos usando el formato gzip.
+   - `zip`/`unzip`: Crear y extraer archivos zip.
+
+6. **Información del sistema:**
+   - `uname`: Mostrar información sobre el sistema.
+   - `top`/`htop`: Ver procesos en ejecución y uso de recursos.
+   - `free`: Mostrar la memoria disponible.
+   - `df`: Mostrar el uso del disco.
+   - `du`: Mostrar el uso del espacio en disco de los archivos y directorios.
+
+Estos son solo algunos de los comandos más comunes. Hay muchos más disponibles dependiendo de las necesidades específicas y el entorno de uso. En [esta página](https://www.dreamhost.com/blog/es/comandos-linux-que-debes-conocer/) hay muchos comandos con ejemplos por si quieres ampliar un poco esta introducción.
 
 ## Desplazamiento por el sistema Linux & Uso de Comandos
 
