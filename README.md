@@ -9,7 +9,6 @@ En este repositorio hay notas de guía sobre temas y conocimientos que he ido ad
 
 - [Guia de Linux]
   - [Introduccion a linux](guides/linux/linux-basic.md)
-    - 
   - [Lista de comandos de linux](guides/linux/comandos.md)
 
 - [Guia sobre docker](guides/docker.md)
