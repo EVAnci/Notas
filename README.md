@@ -1,35 +1,34 @@
-# Notas
+# 📝 Notas de Estudio
 
-En este repositorio hay notas de guía sobre temas y conocimientos que he ido adquiriendo a lo largo de mis estudios.
+Este repositorio contiene guías y notas sobre diversos temas y conocimientos que he adquirido a lo largo de mis estudios. Útil para consulta rápida y referencia en temas de tecnología, desarrollo y administración de sistemas.
 
-> [IMPORTANTE]
-> La información colocada en este repositorio intenta ser información corroborada, sin embargo puede existir alguna discrepancia o error. Verificar los datos antes de realizar modificaciones serias a tus proyectos o S.O.
+> ⚠️ **IMPORTANTE**  
+> La información aquí presentada intenta ser precisa y está corroborada en su mayoría, sin embargo, podrían existir errores o discrepancias. Se recomienda verificar los datos antes de realizar modificaciones importantes en proyectos o sistemas operativos.
 
-## Indice
+---
 
-- [Guia de Linux]
-  - [Introduccion a linux](guides/linux/linux-basic.md)
-  - [Lista de comandos de linux](guides/linux/comandos.md)
+## 📖 Guías
 
-- [Guia sobre docker](guides/docker.md)
+### 🔧 Guía de Linux
+- **Introducción a Linux**: Conceptos básicos y primer acercamiento al sistema operativo Linux. [Ver más](guides/linux/linux-basic.md)
+- **Comandos Útiles de Linux**: Una lista de comandos esenciales para trabajar en la terminal de Linux. [Ver más](guides/linux/comandos.md)
 
-- [Guia sobre git](guides/start.md)  
-  - [¿Como añadir una clave ssh a github?](guides/git/ssh.md)  
-  - [Comandos utiles](guides/git/git.md)  
+### 🐳 Guía sobre Docker
+- Guía completa sobre Docker, desde la instalación hasta el manejo de contenedores. [Ver más](guides/docker.md)
 
-- [Guia sobre utilidades de python]
-  - [Programación Orientada a Objetos](guides/python/oop.md)
-  - [Python Debugger](guides/python/ipdb.md)
-  - [Entorno virtual de Python](guides/python/venv.md)
+### 🔄 Guía de Git
+- **Añadir una clave SSH a GitHub**: Paso a paso para añadir una clave SSH a tu cuenta de GitHub. [Ver más](guides/git/ssh.md)
+- **Comandos útiles de Git**: Comandos más utilizados en Git para la gestión de versiones. [Ver más](guides/git/git.md)
 
-- [Guía sobre sintaxis markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+### 🐍 Guía de Python
+- **Programación Orientada a Objetos (POO)**: Conceptos de POO aplicados en Python. [Ver más](guides/python/oop.md)
+- **Python Debugger (ipdb)**: Uso de la herramienta de depuración `ipdb`. [Ver más](guides/python/ipdb.md)
+- **Entorno Virtual en Python**: Cómo crear y gestionar entornos virtuales en Python. [Ver más](guides/python/venv.md)
 
-## Datos Personales
+---
 
-- Soy estudiante universitario.
-- Mi Sistema Operativo de preferencia es Linux, en particular Arch Linux.
+## 🛠️ Recursos Adicionales
+- [Guía de Sintaxis Markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax): Para mejorar la presentación de tus archivos Markdown.
+- [Cheatsheet de Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet): Referencia rápida de la sintaxis de Markdown.
 
-<div style="text-align:center; margin: 20px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/1200px-Tux.svg.png" alt="Linux" width="54" style="display:block; margin:auto;"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Archlinux-logo-standard-version.png/800px-Archlinux-logo-standard-version.png" alt="Arch" width="200" style="display:flex; margin:auto;"/>
-</div>
+---
