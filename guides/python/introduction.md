@@ -118,7 +118,7 @@ Las estructuras de control determinan el flujo de ejecución de un programa, per
 
 Las estructuras de decisión son fundamentales para que el programa ejecute diferentes bloques de código en función del resultado de condiciones evaluadas.
 
-**Elementos clave:**
+**Condicionales:**
 
 - **`if`:**  
   Evalúa una condición; si la condición es verdadera (`True`), se ejecuta el bloque de código indentado que le sigue.
@@ -151,6 +151,7 @@ else:
 ```
 
 ### 2.2 Estructuras Repetitivas
+Las estructuras repetitivas permiten ejecutar un bloque de código múltiples veces, ya sea mientras se cumpla una condición o recorriendo los elementos de una secuencia.
 
 **Bucle while:**
 
