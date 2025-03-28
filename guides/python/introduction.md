@@ -46,26 +46,26 @@ Las listas son colecciones ordenadas y mutables que permiten almacenar múltiple
 - **Uso recomendado:**  
 Utiliza listas cuando necesites una colección de elementos que pueda cambiar durante la ejecución del programa, por ejemplo, para gestionar datos dinámicos, realizar operaciones de inserción o eliminación, o manipular secuencias de elementos de manera flexible.
 
-**Ejemplo de lista:**
+- **Ejemplo de lista:**
 
-```python
-# Creación de una lista
-frutas = ["manzana", "banana", "cereza"]
+    ```python
+    # Creación de una lista
+    frutas = ["manzana", "banana", "cereza"]
 
-# Agregar un elemento al final
-frutas.append("naranja")  # Se realizan verificaciones internas para garantizar la consistencia
+    # Agregar un elemento al final
+    frutas.append("naranja")  # Se realizan verificaciones internas para garantizar la consistencia
 
-# Modificar un elemento en una posición específica
-frutas[1] = "kiwi"  # 'banana' es reemplazada por 'kiwi'
+    # Modificar un elemento en una posición específica
+    frutas[1] = "kiwi"  # 'banana' es reemplazada por 'kiwi'
 
-# Acceso a elementos mediante índices
-print("Primera fruta:", frutas[0])  # Acceso con índice positivo
-print("Última fruta:", frutas[-1])   # Acceso con índice negativo
+    # Acceso a elementos mediante índices
+    print("Primera fruta:", frutas[0])  # Acceso con índice positivo
+    print("Última fruta:", frutas[-1])   # Acceso con índice negativo
 
-# Recorrer la lista mostrando índices y elementos
-for indice, fruta in enumerate(frutas):
-    print(f"Fruta en el índice {indice}: {fruta}")
-```
+    # Recorrer la lista mostrando índices y elementos
+    for indice, fruta in enumerate(frutas):
+        print(f"Fruta en el índice {indice}: {fruta}")
+    ```
 
 ### 1.3 Tuplas
 
@@ -91,47 +91,53 @@ Una vez creada, la tupla no puede alterarse. Esto implica que:
 - **Uso recomendado:**
 Emplea tuplas cuando necesites garantizar que los datos permanezcan constantes durante la ejecución del programa, por ejemplo, para almacenar configuraciones fijas, coordenadas o cualquier conjunto de valores que no deban cambiar.
 
-**Ejemplo de tuplas:**
+- **Ejemplo de tuplas:**
 
-```python
-# Creación de una tupla
-coordenadas = (15.5, 23.8)
+    ```python
+    # Creación de una tupla
+    coordenadas = (15.5, 23.8)
 
-# Acceso a elementos mediante índices
-print("Coordenada x:", coordenadas[0])
-print("Coordenada y:", coordenadas[1])
+    # Acceso a elementos mediante índices
+    print("Coordenada x:", coordenadas[0])
+    print("Coordenada y:", coordenadas[1])
 
-# Acceso utilizando índices negativos
-print("Última coordenada:", coordenadas[-1])
+    # Acceso utilizando índices negativos
+    print("Última coordenada:", coordenadas[-1])
 
-# Intentar modificar una tupla genera error (descomentar la siguiente línea provocaría un TypeError)
-# coordenadas[0] = 20.0
-```
+    # Intentar modificar una tupla genera error (descomentar la siguiente línea provocaría un TypeError)
+    # coordenadas[0] = 20.0
+    ```
 
 ---
 
 ## 2. Estructuras de Control
 
-Las estructuras de control permiten dirigir el flujo de ejecución de un programa en función de condiciones o repeticiones.
-
+Las estructuras de control determinan el flujo de ejecución de un programa, permitiendo que se tomen decisiones o se repitan bloques de código según determinadas condiciones.
 
 ### 2.1 Estructuras de Decisión
 
-**Condicionales:**
+Las estructuras de decisión son fundamentales para que el programa ejecute diferentes bloques de código en función del resultado de condiciones evaluadas.
 
-- `if`: Evalúa una condición. Si es verdadera, ejecuta el bloque de código indentado.
+**Elementos clave:**
 
-- `elif`: Permite evaluar condiciones adicionales si la condición previa fue falsa.
+- **`if`:**  
+  Evalúa una condición; si la condición es verdadera (`True`), se ejecuta el bloque de código indentado que le sigue.
 
-- `else`: Ejecuta un bloque de código cuando ninguna de las condiciones anteriores se cumple.
+- **`elif` (else if):**  
+  Permite evaluar condiciones adicionales cuando la condición anterior es falsa. Se pueden encadenar varios `elif` para cubrir distintos casos.
 
-**Parámetros y uso:**
+- **`else`:**  
+  Se ejecuta cuando ninguna de las condiciones anteriores se cumple, actuando como un caso por defecto.
 
-- La condición que se evalúa debe ser una expresión que retorne un valor booleano (True o False).
+**Aspectos importantes:**
 
-- Se pueden encadenar múltiples condiciones para definir distintos flujos de ejecución.
+- **Condición:**  
+  Cada condicional evalúa una expresión que debe retornar un valor booleano (`True` o `False`). Estas expresiones pueden involucrar operadores relacionales (como `>`, `<`, `==`, `!=`) y operadores lógicos (`and`, `or`, `not`).
 
-**Ejemplo**
+- **Encadenamiento y anidación:**  
+  Es posible combinar múltiples condiciones utilizando `elif` y, de ser necesario, anidar estructuras condicionales para resolver escenarios complejos.
+
+**Ejemplo práctico:**
 
 ```python
 numero = 10
@@ -146,7 +152,7 @@ else:
 
 ### 2.2 Estructuras Repetitivas
 
-**Bucle while**
+**Bucle while:**
 
 - **Concepto:** Ejecuta repetidamente un bloque de código mientras la condición evaluada sea verdadera.
 
@@ -159,7 +165,7 @@ while contador < 5:
     contador += 1  # Actualiza la variable para salir del bucle
 ```
 
-**Bucle for**
+**Bucle for:**
 
 - **Concepto:** Permite iterar sobre elementos de una secuencia (como listas, tuplas, cadenas) o sobre un rango de valores.
 
@@ -206,8 +212,8 @@ Las funciones son bloques de código reutilizables que realizan una tarea espec�
 
     - **Retorno:** La función puede retornar un valor utilizando la palabra clave return. Si no se especifica, la función retorna None.
 
-### 3.2 Argumentos Posicionales y el Paso de Datos
-- **Argumentos posicionales:** Son aquellos que se pasan a la función en el orden en que se definieron.
+### 3.2 Argumentos Posicionales
+- Son aquellos que se pasan a la función en el orden en que se definieron.
 
 - **Ejemplo:**
 
