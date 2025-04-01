@@ -24,6 +24,7 @@ Este repositorio contiene guías y notas sobre diversos temas y conocimientos qu
 - **Programación Orientada a Objetos (POO)**: Conceptos de POO aplicados en Python. [Ver más](guides/python/oop.md)
 - **Python Debugger (ipdb)**: Uso de la herramienta de depuración `ipdb`. [Ver más](guides/python/ipdb.md)
 - **Entorno Virtual en Python**: Cómo crear y gestionar entornos virtuales en Python. [Ver más](guides/python/venv.md)
+- **Decoradores**: ¿Qué es un decorador? [Ver más](guides/python/decoradores.md)
 
 ---
 
